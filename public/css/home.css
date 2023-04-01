@@ -1,0 +1,158 @@
+/******************* TABLEAU  *********************/
+
+.table-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  th {
+    background-color: #17636f;
+    font-weight: bold;
+    padding-right:10px;
+    padding-top: 5px;
+    font-weight: 400;
+    color:#ffffff;
+  }
+  
+  td {
+    background-color: #f2f2f2;
+    color: #626262;
+    padding: 20px; 
+    border-color:#ffffff;
+    border-style: solid;
+    border-width: 7px;
+  }
+
+  .text-left{
+    text-align: left;
+  }
+  .text-left.th{
+    padding-left: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color:#258a8e;
+  }
+  #table-pc{
+    display: none;
+  }
+  #table-phone{
+    display: block;
+  }
+/******************* GRAPHIQUES *********************/
+
+.graph.d-flex.m-1{
+  flex-direction: column;
+  align-items: center;
+  gap:20px;
+}
+.canvas-size{
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#myChart{
+  width: 100%;
+  height: 250px;
+}
+#myChart2{
+  width: 200px;
+  height: 250px;
+}
+.doughnut{
+  width: 250px;
+}
+
+
+/******************* INTERVENTIONS *********************/
+.container.appointment{
+  margin-bottom: 150px;
+}
+.client-link{
+  text-decoration: none;
+}
+.client-link td{
+  color: #626262;
+}
+.inter-title{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 50px;
+}
+.img-relax{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+.fa-solid.fa-circle-info{
+  font-size: 22px;
+  color:  #ffffff;
+}
+.table-button{
+  padding:0;
+  background-color: #258a8e;
+}
+.table-button:hover{
+  background-color:#17aa92;
+}
+.button{
+  padding: 20px;
+}
+
+/******************************************************
+                          PC 
+*******************************************************/
+
+@media screen and (min-width:1280px)
+{
+  /******************* GRAPHIQUES PC *********************/
+  .graph.d-flex.m-1{
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .canvas-size{
+    width: 50%;
+    height: 400px;
+  }
+  .doughnut{
+    width: 250px;
+  }
+  /******************* TABLEAU PC *********************/
+  #table-pc{
+    display: block;
+  }
+  #table-phone{
+    display: none;
+  }
+  th {
+    background-color: #ffffff;
+    color:#626262;
+  }
+  /******************* INTERVENTIONS PC *********************/
+  .container.appointment{
+    margin-bottom: 0;
+  }
+  .fa-solid.fa-circle-info{
+    font-size: 22px;
+    color:  #17636f;
+  }
+  .fa-solid.fa-chevron-right{
+    font-size: 20px;
+    color:#ffffff;
+  }
+}
