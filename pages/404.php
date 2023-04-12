@@ -49,3 +49,4 @@
 <button class="btn btn-primary mt-3">Retour</button>
 </div>
 
+<script src="../public/js/script.js"></script>

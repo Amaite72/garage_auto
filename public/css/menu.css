@@ -116,7 +116,7 @@
     align-items: center;
     justify-content: center;
 }
-.nav-link.active.p-3{
+ .nav-link.active.p-3.a-menu{
   background-color: rgba(23, 99, 111, 1);
   border-radius: 0;
 } 
@@ -125,5 +125,5 @@
 } 
 .nav-link.text-white.p-3.a-menu:hover{
   background-color: rgba(23, 99, 111, 1);
-} 
+}  
 }

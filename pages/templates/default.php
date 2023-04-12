@@ -61,7 +61,7 @@
         <div class="contain-menu">
         <ul class="nav nav-pills flex-row align-items-center justify-content-between">
             <li class="nav-item">
-                <a href="index.php?page=home" class="nav-link active p-4 a-menu" aria-current="page">
+                <a href="index.php?page=home" class="nav-link text-white p-4 a-menu">
                     <svg class="bi pe-none me-2" width="22" height="22"><use xlink:href="#home"/></svg>
                 </a>
             </li>
@@ -122,7 +122,9 @@
                   </ul>
                 </div>
         </div>
+
         <ul class="nav nav-pills flex-column mb-auto">
+            
             <li class="nav-item">
                 <a href="index.php?page=home" class="nav-link text-white p-3 a-menu home" id="home" aria-current="page">
                     <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"/></svg>
@@ -138,13 +140,14 @@
             <li>
                 <a href="index.php?page=workers" class="nav-link text-white p-3 a-menu worker" id="worker">
                     <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
-                    Employé
+                    Employés
                 </a>
             </li>
+            
             <li>
                 <a href="index.php?page=interventions" class="nav-link text-white p-3 a-menu intervention" id="intervention">
                     <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-                    Intervention
+                    Interventions
                 </a>
             </li>
         </ul>
@@ -157,7 +160,7 @@
         </div>
     
 </div><!-- end body-app -->  
-    <script src="../public/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <script src="../public/js/menu.js"></script>
+    
   </body>
 </html>

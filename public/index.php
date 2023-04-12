@@ -1,5 +1,6 @@
 <?php
-
+require "../app/form/formValid.php";
+require "../app/form/form.php";
 require '../app/Autoloader.php';
 App\Autoloader::register(); 
 
@@ -12,6 +13,11 @@ if(isset($_GET['page'])){
     $page = 'home';
 }
 
+if(isset($_GET['id'])){
+
+    $id = $_GET['id'];
+
+}
 
 
 
@@ -24,6 +30,10 @@ if($page === 'home'){
 }else if($page === 'clients'){
 
     require '../pages/clients.php';
+
+}else if($page === 'viewClient' && isset($id)){
+
+    require '../pages/viewClient.php';
 
 }else if($page === 'workers'){
 

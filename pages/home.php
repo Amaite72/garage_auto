@@ -186,7 +186,7 @@ $interventions = App\Table\Appointment::firstThreeInter(2, $now);
                 ?>   
                 <!-- ////////////////////////////// LIGNE PC /////////////////////////// -->           
                 <tr>               
-                    <td class="table-button"><a href="" class="button"><i class="fa-solid fa-chevron-right"></i></a></td>
+                    <td class="table-button"><a href="index.php?page=viewClient&id=<?= $rdv->client_id; ?>" class="button"><i class="fa-solid fa-chevron-right"></i></a></td>
                     <td class="text-left td"><?= ucfirst($client->last_name) . ' ' . ucfirst($client->first_name); ?></td>
                     <td><?= $vehicule->brand; ?></td>
                     <td><?= $vehicule->matriculation; ?></td>
@@ -228,7 +228,7 @@ $interventions = App\Table\Appointment::firstThreeInter(2, $now);
 <h2 class="inter-title">Interventions du jour</h2>
 <section class="table-container">
     <?php foreach($interventions as $rdv): ?> 
-    <a class="client-link" href="">
+    <a class="client-link" href="index.php?page=viewClient&id=<?= $rdv->client_id; ?>">
     <table class="m-3">
         <thead>
             <tr>
@@ -269,3 +269,4 @@ $interventions = App\Table\Appointment::firstThreeInter(2, $now);
 <?php endif; ?>  
 
 </div>
+
