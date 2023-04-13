@@ -1,6 +1,6 @@
 <?php
 require "../app/form/formValid.php";
-require "../app/form/form.php";
+require "../app/form/addNew.php";
 require '../app/Autoloader.php';
 App\Autoloader::register(); 
 

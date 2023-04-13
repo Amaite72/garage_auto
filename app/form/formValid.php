@@ -30,14 +30,14 @@ class FormValid {
         if(empty($data['lastname'])) {
             static::$errors['lastname'] = "Le nom est obligatoire.";
         }elseif(ctype_alpha($data['lastname']) === false){
-            static::formatText('lastname');
+            static::formatText('lastname', 'nom');
         }
         
         // Check Firstname
         if(empty($data['firstname'])) {
             static::$errors['firstname'] = "Le prénom est obligatoire.";
         }elseif(ctype_alpha($data['firstname']) === false){
-            static::formatText('firstname');
+            static::formatText('firstname', 'prénom');
         }
         
         // Check mail
@@ -47,14 +47,11 @@ class FormValid {
             static::$errors['email'] = "L'email n'est pas valide.";
         }
 
-        // Check mail
-        
-        
         // Check Lastname
         if(empty($data['phone'])) {
             static::$errors['phone'] = "Le téléphone est obligatoire.";
         }else{
-            static::formatPhone($data['phone']);
+            static::formatPhone($data['phone'], "téléphone");
         }
         
         // Check Firstname
@@ -76,13 +73,13 @@ class FormValid {
 
     }
 
-    public static function formatText($nameField){
+    public static function formatText($indexField, $nameField){
         
-        return static::$errors[$nameField] = "Ce champs ne doit contenir que des lettres.";     
+        return static::$errors[$indexField] = "Le ".    $nameField  ." ne doit contenir que des lettres.";     
 
     }
 
-    public static function formatPhone($field){
+    public static function formatPhone($field, $nameField){
 
         $maxlenght = substr($field, 0, 10);
         $size = strlen($maxlenght);
@@ -95,10 +92,10 @@ class FormValid {
             if ($numericPhone === $phone && ctype_digit($numericPhone)) {
                 return $phone;
             } else {
-                return static::$errors['phone'] = "Ce champs doit etre au format numérique.";
+                return static::$errors['phone'] = "Le " . $nameField . " doit etre au format numérique.";
             }
         }else{
-            return static::$errors['phone'] = "Ce champs doit comporter 10 chiffres.";
+            return static::$errors['phone'] = "Le " . $nameField . " doit comporter 10 chiffres.";
         }
 
     }

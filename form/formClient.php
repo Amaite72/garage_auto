@@ -7,7 +7,7 @@ if(isset($_POST["addClient"])){
     $email = htmlentities($_POST["email"]);
     $phone = htmlentities($_POST["phone"]);
     $address = htmlentities($_POST["address"]);
-    echo $email;
+    
         $data = [
             "lastname" => $lastname,
             "firstname" => $firstname,
@@ -21,15 +21,26 @@ if(isset($_POST["addClient"])){
         $firstnameError = App\Form\FormValid::getErrorForField("firstname");
         $emailError = App\Form\FormValid::getErrorForField("email");
         $phoneError = App\Form\FormValid::getErrorForField("phone");
-        $addressError = App\Form\FormValid::getErrorForField("address");
-               
+        $addressError = App\Form\FormValid::getErrorForField("address"); 
         
+        if($lastnameError === NULL && $firstnameError === NULL && $emailError === NULL && $phoneError === NULL && $addressError === NULL){
+
+            $newClient = new App\form\AddNew($data);
+            $success = $newClient->add("client");
+
+        }
 } 
 ?>
+<?php if(isset($success)): ?>
+    <div class="alert alert-success" role="alert">
+      <?= $success; ?>
+    </div>
+<?php endif; ?>
+
 
 <div class="form-fo-contain">
     <h2 class="h2">Nouveau client</h2>
-    <form action="" method="POST" enctype='multipart/form-data'>
+    <form action="" method="POST" enctype='multipart/form-data' >
     <input type="hidden" name="is_verified" value="0">
     <div class="row">
         <div class="col-md-6">
@@ -58,7 +69,7 @@ if(isset($_POST["addClient"])){
             <small class="form-text text-muted"><?= $emailError; ?></small>
         <?php endif; ?>
       </div>
-      <div class="row">
+      <div class="row mb-3">
         <div class="col-md-6">
             <div class="form-group">
               <label for="phone" class="form-label">Téléphone</label>
