@@ -127,5 +127,18 @@ class Appointment extends Table{
        
     }
 
+    public static function getInterByClient($client_id){
+        
+        return self::query("SELECT client_id, vehicle_id, pattern, pattern_color, `time`
+                                    FROM " . static::$table . "
+                                    WHERE client_id = ?
+                                    ",[$client_id],true);  
+        
+                    
+       
+    }
+
+    
+
 }
 

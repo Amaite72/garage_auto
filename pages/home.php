@@ -269,4 +269,3 @@ $interventions = App\Table\Appointment::firstThreeInter(2, $now);
 <?php endif; ?>  
 
 </div>
-

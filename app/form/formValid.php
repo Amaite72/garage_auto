@@ -8,35 +8,21 @@ class FormValid {
 
     private static $errors = [];
 
-    public static function validField($data){
-        //récuperation des index
-        $keys = array_keys($data);
-        /* var_dump($keys); */
-        foreach($keys as $index){
-
-            if(empty($data[$index])) {
-                return static::$errors[$index] = "Le champ est obligatoire.";
-            }
-
-        }
-        return empty(static::$errors);
-    }
-
     public static function getEmptyFields(array $data) {
         
         static::$errors = [];
         
         // Check Lastname
-        if(empty($data['lastname'])) {
+        if (empty($data['lastname'])) {
             static::$errors['lastname'] = "Le nom est obligatoire.";
-        }elseif(ctype_alpha($data['lastname']) === false){
+        } elseif (!empty($data['lastname']) && ctype_alpha($data['lastname']) === false) {
             static::formatText('lastname', 'nom');
         }
         
         // Check Firstname
-        if(empty($data['firstname'])) {
+        if (empty($data['firstname'])) {
             static::$errors['firstname'] = "Le prénom est obligatoire.";
-        }elseif(ctype_alpha($data['firstname']) === false){
+        } elseif (!empty($data['firstname']) && ctype_alpha($data['firstname']) === false) {
             static::formatText('firstname', 'prénom');
         }
         
@@ -58,7 +44,7 @@ class FormValid {
         if(empty($data['address'])) {
             static::$errors['address'] = "L'adresse est obligatoire.";
         }
-        
+         
         return empty(static::$errors);
     }
 

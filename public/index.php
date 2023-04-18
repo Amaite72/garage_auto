@@ -1,7 +1,9 @@
 <?php
+session_start(); 
 require "../app/form/formValid.php";
-require "../app/form/addNew.php";
-require '../app/Autoloader.php';
+require "../app/form/individual.php";
+require "../app/form/form.php";
+require "../app/Autoloader.php";
 App\Autoloader::register(); 
 
 if(isset($_GET['page'])){
@@ -35,7 +37,12 @@ if($page === 'home'){
 
     require '../pages/viewClient.php';
 
-}else if($page === 'workers'){
+}else if($page === 'update' && isset($id)){
+
+    require '../pages/update.php';
+
+}
+else if($page === 'workers'){
 
     require '../pages/workers.php';
 

@@ -18,6 +18,19 @@ class Table{
         ", [$id], get_called_class(), true); 
     }
 
+    public static function formatPhoneNumber($phoneNumber) {
+        // Supprimer tous les caractères non numériques du numéro de téléphone
+        $phoneNumber = preg_replace('/\D/', '', $phoneNumber);
+    
+        // Diviser le numéro de téléphone en groupes de deux chiffres
+        $formattedPhoneNumber = chunk_split($phoneNumber, 2, ' ');
+    
+        // Supprimer les espaces en trop en fin de chaîne
+        $formattedPhoneNumber = rtrim($formattedPhoneNumber);
+    
+        return $formattedPhoneNumber;
+    }
+
     // Méthode pour exécuter une requête SQL
     public static function query($statement, $attributes = null, $one = false){
 
