@@ -64,4 +64,23 @@ class Table{
         // Renvoie la valeur de la propriété
         return $this->$key;
     } 
+
+    public static function count()
+    {
+        return App::getDb()->query("SELECT COUNT(*) AS count FROM " . static::$table, get_called_class());
+    }
+
+    public static function tenFirst($limit = 10, $offset = 0){
+        
+        return App::getDb()->query("SELECT *
+                                    FROM " . static::$table . "
+                                    LIMIT " . $limit . " OFFSET " . $offset . "
+                                    "
+                                    , get_called_class());
+    }
+
+
+    
+    
+    
 }

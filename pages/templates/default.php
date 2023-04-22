@@ -26,6 +26,7 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="../public/css/menu.css">
+    
   </head>
 
   <body>
